@@ -1,0 +1,87 @@
+/* Allgemeine Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #000; /* Schwarzer Hintergrund */
+    font-family: Arial, sans-serif;
+}
+
+.button-container {
+    position: relative;
+}
+
+.sparkling-button {
+    position: relative;
+    padding: 12px 30px;
+    font-size: 18px;
+    color: #00fff0; /* Textfarbe */
+    background: none;
+    border: 2px solid #00fff0; /* Leuchtende Randfarbe */
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Effekt beim Hover */
+.sparkling-button:hover {
+    box-shadow: 0 0 20px #00fff0, 0 0 50px #00fff0; /* Leuchtender Rand */
+    transform: scale(1.1); /* Leichtes Vergrößern */
+}
+
+/* Sterne */
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: sparkle 1.5s infinite ease-in-out;
+    pointer-events: none;
+}
+
+.star-1 {
+    top: -10px;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.star-2 {
+    top: 50%;
+    left: -10px;
+    animation-delay: 0.4s;
+}
+
+.star-3 {
+    top: 100%;
+    left: 40%;
+    animation-delay: 0.6s;
+}
+
+.star-4 {
+    top: 30%;
+    left: 100%;
+    animation-delay: 0.8s;
+}
+
+/* Keyframe-Animation für Sterne */
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) translate(10px, -10px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translate(20px, -20px);
+    }
+}
